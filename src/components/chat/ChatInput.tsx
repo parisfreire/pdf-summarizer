@@ -2,7 +2,7 @@ import { Send } from 'lucide-react'
 import { Button } from '../ui/button'
 import { Textarea } from '../ui/textarea'
 import { useContext, useRef } from 'react'
-import {ChatContext} from "@/components/chat/ChatContext";
+import { ChatContext } from './ChatContext'
 
 interface ChatInputProps {
     isDisabled?: boolean
@@ -27,7 +27,7 @@ const ChatInput = ({ isDisabled }: ChatInputProps) => {
                             <Textarea
                                 rows={1}
                                 ref={textareaRef}
-                                maxrows={4}
+                                maxRows={4}
                                 autoFocus
                                 onChange={handleInputChange}
                                 value={message}
@@ -47,7 +47,7 @@ const ChatInput = ({ isDisabled }: ChatInputProps) => {
                             <Button
                                 disabled={isLoading || isDisabled}
                                 className='absolute bottom-1.5 right-[8px]'
-                                aria-label='Send message'
+                                aria-label='send message'
                                 onClick={() => {
                                     addMessage()
 
